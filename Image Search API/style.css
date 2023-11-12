@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,100&family=Space+Mono&display=swap');
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color: rgb(39, 39, 39);
+}
+
+#content{
+    width:100%;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#content #navbar-top{
+    background-color: rgb(39, 39, 39);
+    padding:2em;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-bottom: 2px solid white;
+    & a {
+        font-size: clamp(1.7rem, 2.5vw, 2rem); 
+        font-weight: 900;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+    }
+    & #search-box{
+        display: flex;
+        max-width: 100%;
+    }
+    & #search-query, #search{
+        padding:10px;
+        border:0px;
+        font-size: 0.9rem;
+        transition: all ease-in-out 300ms;
+        font-weight: 500;
+    }
+    & #search-query{
+        width:80%;
+        border-radius: 15px 0 0 15px;
+        outline: none;
+    }
+    #search{
+        width: 30%;
+        border-radius: 0 15px 15px 0;
+        cursor: pointer;
+        background-color: rgb(6, 48, 138);
+        color:white;
+    }
+    & #search:hover{
+        background-color: rgba(6, 48, 138, 0.74);
+    }
+    & #search-query:hover, #search:hover{
+        outline: 1px solid white;
+    }
+}
+
+#cards-container{
+    margin-top: 4em;
+    
+}
+
+.card{
+    background-color: white;
+    width:45%;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    margin-bottom: 4em;
+    margin: 0 auto 4em auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.card .description{
+    transform: translate(-1000%);
+    overflow: hidden;
+    position: absolute;
+    left:0;
+    bottom: 0;
+    padding:0em 0em 2em 2em;
+    transition: ease-in-out 300ms;
+}
+
+.card:hover .description{
+    transform: translate(0);
+    background:linear-gradient(180deg, rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.37));
+    width:100%;
+    padding:0.4em;
+    color:white;
+}
+
+.card #title {
+    font-size: 2rem;
+}
+
+
+@media (768px >= width) {
+    #content #navbar-top{
+        display: flex;
+        flex-direction: column;
+        & #search-box{
+            margin-top:1em;
+            display: flex;
+            flex-direction: column;
+        }
+        & #search-query{
+            border-radius: 15px 15px 0px 0px;
+            outline: none;
+        }
+        & #search-query, #search{
+            width:100%;
+        }
+        #search{
+            border-radius: 0px 0px 15px 15px;
+            cursor: pointer;
+            background-color: rgb(6, 48, 138);
+            color:white;
+        }
+        & #search:hover{
+            background-color: rgba(6, 48, 138, 0.74);
+        }
+        & #search-query:hover, #search:hover{
+            outline: 1px solid white;
+        }
+    }
+
+    
+    .card{
+        padding:10em;
+        background-color: white;
+        width:100%;
+        position: relative;
+    }
+    
+    .card .description{
+        position: absolute;
+        left:0;
+        bottom: 0;
+        padding:0em 0em 2em 2em;
+    }
+}
+
+.wrong{
+    background-color: red;
+    color:white;
+    font-size: 1.5rem;
+    padding:0.7em;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
