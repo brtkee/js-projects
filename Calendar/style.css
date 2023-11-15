@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,100&family=Roboto+Mono:ital,wght@0,400;1,300;1,400&family=Sometype+Mono&family=Space+Mono&display=swap');
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+#app{
+    min-height: 100vh;
+    display:grid;
+    place-items: center;
+    font-family: 'Sometype Mono', monospace;
+}
+
+#callendar{
+    padding:3em;
+    border: 1px solid black;
+    & header{
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 2em;
+        & p {
+            font-size: 2rem;
+        }
+        & ion-icon{
+            width: 50px;
+            height: 24px;
+            cursor: pointer;
+        }
+    }
+    & ul{
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+
+        width:90%;
+        margin:auto;
+    }
+    & #weeks > * {
+        font-weight: 600;
+        font-size: 1.4rem;
+    }
+    & #days > * {
+        font-weight: 200;
+        font-size: 1.2rem;
+    }
+    & ul li{
+        width: 14.2857%; 
+    }
+    & .unactive{
+        color:rgba(68, 68, 68, 0.774);
+    }
+}
