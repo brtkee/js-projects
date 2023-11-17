@@ -7,7 +7,7 @@ async function getData(){
     const response = await fetch("https://opentdb.com/api.php?amount=50")
     const data = await response.json()
     if(!response.ok) {
-        alert('Too many requests! pleasa refresh the page')
+        alert('Too many requests! please refresh the page')
     } else{
         generateQuestion(data.results)
     }
