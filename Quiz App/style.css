@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,400;0,500;1,200;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto+Mono:ital,wght@0,200;0,300;0,400;0,500;1,200;1,400&display=swap');
+*, *::after, *::before{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+
+body{
+    background-color: rgb(46, 145, 211);
+    
+}
+
+#main-navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    padding:2em;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    font-family: 'Noto Sans', sans-serif;
+    cursor: pointer;
+    & #navbar-title{
+        transition: color ease-in-out 200ms;
+        font-size: 2rem;
+    }
+    & #navbar-title:hover{
+        color:rgba(0, 0, 0, 0.678);
+    }
+    & #generate{
+        padding: .8em;
+        border: 1px solid rgba(0, 0, 0, 0.171);
+        border-radius: 5px;
+        color:white;
+        background-color: rgb(46, 145, 211);
+        font-weight: 900;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: background-color ease-in-out 300ms;
+    }
+    & #generate:hover{
+        background-color: rgba(46, 145, 211, 0.719);
+    }
+}
+
+#content{
+    font-family: 'Roboto Mono', monospace;
+    display: grid;
+    place-items: center;
+    min-height: 80vh;
+    & #quiz-card{
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        padding: 2em;
+        border-radius: 15px;
+        width: 50%;
+        height: 600px;
+        & #quiz-nav{
+            display:flex;
+            align-items: center;
+            justify-content: space-around;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid rgba(0, 60, 255, 0.493);
+            & p {
+                font-size: 2rem;
+            }
+            & #difficult {
+                padding: .5em;
+                border-radius: 5px;
+                box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+                color:white;
+                font-weight: 900;
+                cursor: pointer;
+            }
+            & #difficult.easy{
+                background-color: rgb(61, 218, 61);
+            }
+            & #difficult.medium{
+                background-color: rgb(218, 163, 61);
+            }
+            & #difficult.hard{
+                background-color: rgb(224, 23, 16);
+            }
+        }
+    }
+    & #question {
+        width: 100%;
+        overflow-wrap: break-word;
+        font-size: 1.5rem;
+        text-align: center;
+        margin-top: 1em;
+    }
+    & .answer-input{
+        width: 100%;
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+        margin: 1.5em 0em 1.5em 0em;
+        padding:1em;
+        transition: all ease-in-out 300ms;
+        cursor: pointer;
+    }
+    & .answer-input.correct{
+        background-color: rgb(12, 212, 12);
+        box-shadow: none;
+        border: none;
+    }
+    & .answer-input.correct:hover{
+        background-color: rgb(12, 212, 12);
+    }
+    & .answer-input.wrong{
+        background-color: rgb(153, 34, 4);
+        box-shadow: none;
+        border: none;
+    }
+    & .answer-input.wrong:hover{
+        background-color: rgb(153, 34, 4);
+    }
+    & .answer-input:hover{
+        background-color: rgba(202, 200, 200, 0.781);
+    }
+
+}
+
+@media (max-width: 768px) {
+    #main-navbar{
+        flex-direction: column;
+        & #navbar-title{
+            font-size: 1.5rem;
+            margin-bottom: 0.5em;
+        }
+    }
+    #content{
+        margin-top: 2em;
+        & #quiz-card{
+            width: 100%;
+            height: fit-content;
+            & #quiz-nav{
+                display:flex;
+                align-items: center;
+                justify-content: space-around;
+                padding-bottom: 0.5em;
+                border-bottom: 2px solid rgba(0, 60, 255, 0.493);
+                & p {
+                    font-size: 2rem;
+                }
+                & #difficult {
+                    padding: .5em;
+                    border-radius: 5px;
+                    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+                    color:white;
+                    font-weight: 900;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    
+    }
+}
