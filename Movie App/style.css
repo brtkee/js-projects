@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root{
+    --primary-color-one: rgb(145, 124, 8);
+    --primary-color-two: black;
+}
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background: linear-gradient(to bottom, var(--primary-color-two) 50%, var(--primary-color-one) 50%);
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+#navbar{
+    background-color: rgba(54, 53, 53, 0.473);
+    color:white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5em;
+    & h1{
+        font-size: 2rem;
+    }
+
+    & .search-container{
+        display: flex;
+
+        & .search {
+            padding:0.5em 1em 0.5em 2em;
+            border: none;
+            outline: none;
+            border-radius: 5px 0px 0px 5px;
+            background-color: transparent;
+            color:white;
+            border: 1px solid white;
+            font-size: 1rem;
+        } 
+
+        & .btn-search{
+            padding:0.5em;
+            background-color: white;
+            border-left: none;
+            border: 1px solid white;
+            border-radius: 0px 5px 5px 0px;
+            cursor: pointer;
+        }
+    }
+}
+
+#main-content{
+    padding:2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    width: 350px;
+    margin: 5em;
+    & #movie-image{
+        width: 100%;
+    }  
+
+    & #content {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.678); 
+        padding: 1em; 
+        visibility: hidden; 
+        opacity: 0; 
+        transition: opacity 0.3s ease, visibility 0.3s ease; 
+    
+        & .overview {
+            max-height: 200px;
+            overflow-y: auto;
+            scrollbar-color: black transparent;
+            scrollbar-width: thin;
+        }
+
+        & .filter{
+            background-color: rgb(52, 54, 54);
+            margin-right: 0.5em;
+            padding: 0.2em;
+            color:white;
+            border-radius: 5px;
+        }
+    }  
+
+    & #movie-image{
+        height: 400px;
+        object-fit: cover;
+    }
+}
+
+.card:hover #content {
+    visibility: visible; 
+    opacity: 1; 
+}
