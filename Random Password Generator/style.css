@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+:root{
+    --main-background-color: rgb(29, 28, 28);
+    --button-background-color:#631AE6;
+    --font-color:#A5ADBA;
+    --website-main-background-color:#F3E5CB;
+    --main-box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color:var(--website-main-background-color);
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-content{
+    height: 500px;
+    width: 400px;
+    max-width: 450px;
+    
+    & .result, .tool-card{
+        background-color: var(--main-background-color);
+        color:var(--font-color);
+        box-shadow: var(--main-box-shadow);
+    }
+
+    & .result{
+        margin-bottom: 2em;
+        padding:0.4em;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & .password-result{
+            width: 90%;
+            background-color: transparent;
+            border:none;
+        }
+
+        & .copy-to-clipboard{
+            width: 10%;
+            padding:0.5em;
+            font-size: 1.2rem;
+            font-weight: 900;
+            color:white;
+            background-color: var(--button-background-color);
+            border:none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform ease-out 300ms;
+        }
+
+        & .copy-to-clipboard:hover{
+            transform: scale(1.1);
+            background-color: #611ae6c0;
+        }
+    }
+
+    & .tool-card{
+        padding:2em;    
+        border-radius: 5px;
+
+        & #range, .number{
+            margin-bottom: 0.4em;
+        }
+
+        & #range{
+            width: 100%;
+            background-color: transparent;
+            -webkit-appearance: none;
+            appearance: none; 
+            background-color: rgb(255, 255, 255);
+            height: 8px;
+            border-radius: 5px;
+        }
+
+        & #range::-moz-range-thumb{
+            background-color: black;
+            border: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        & .number{
+            float: right;
+        }
+
+        & .checbox-buttons > *{
+            margin-bottom: 0.6em;
+        }
+
+        & input[type="checkbox"]{
+            accent-color: black;
+            cursor: pointer;
+        }
+    }
+
+    & .create-password{
+        padding:0.8em;
+        background-color: var(--button-background-color);
+        border: none;
+        color:white;
+        text-transform: uppercase;
+        border-radius: 5px;
+        font-weight: 800;
+        margin-top: 2em;
+        width: 100%;
+        cursor: pointer;
+        transition: background-color ease-in-out 300ms;
+        box-shadow: var(--main-box-shadow);
+    }
+
+    & .create-password:hover{
+        background-color: #611ae6c9;
+    }
+}
+
+
+@media (max-width:768px) {
+    .main-content{
+        width: 100%;
+        width: 350px;
+    }
+}
