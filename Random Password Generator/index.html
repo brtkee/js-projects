@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main-content">
+        <div class="result">
+            <p class="password-result"></p>
+            <button class="copy-to-clipboard"><ion-icon name="clipboard-outline"></ion-icon></button>
+        </div>
+
+        <div class="tool-card">
+            <label for="range">Character length: <span class="number">12</span></label><br>
+            <input type="range" min="2" max="32" id="range">
+            <section class="checbox-buttons">
+                <input type="checkbox" name="" id="upperCase" class="checkbox">
+                <label for="upperCase">Include upperCase</label><br>
+                <input type="checkbox" name="" id="lowerCase" class="checkbox">
+                <label for="lowerCase">Include lowerCase</label><br>
+                <input type="checkbox" name="" id="numbers" class="checkbox">
+                <label for="numbres">Include numbers</label><br>
+                <input type="checkbox" name="" id="symbols" class="checkbox">
+                <label for="symbols">Include symbols</label>
+            </section>
+        </div>
+        <button class="create-password">Create password</button>
+    </main>
+    <script src="script.js"></script>
+
+    <!--ION-ICONS: -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
