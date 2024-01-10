@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+#content{
+    display: grid;
+    place-content: center;
+    background: linear-gradient(to top, rgb(20, 20, 20), rgb(36, 36, 36), rgb(39, 39, 39));
+    min-height: 100vh;
+    
+
+    & #player-text{
+        font-family: 'Bungee Spice', sans-serif;
+        text-align: center;
+        font-size: 2rem;
+        border-radius: 20px;
+    }
+
+    & .game-card{
+        background-color: white;
+        width: 500px;
+        font-family: 'Rubik Mono One', monospace;
+        border-radius: 0px 0px 7px 7px ;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    & .game-board{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border: 1px solid;
+        padding:2em;
+        width: 100%;
+        & .top{
+            border-top:none;
+        }
+
+        & .top-left{
+            border-top: none;
+            border-left: none;
+        }
+
+        & .top-right{
+            border-top:none;
+            border-right: none;
+        }
+
+        & .left{
+            border-left:none;
+        }
+
+        & .right{
+            border-right: none;
+        }
+
+        & .bottom-left{
+            border-left: none;
+            border-bottom: none;
+        }
+
+        & .bottom-right{
+            border-right:none;
+            border-bottom: none;
+        }
+
+        & .bottom{
+            border-bottom: none;
+        }
+    }
+
+    & .cell {
+        display: flex;
+        align-items: center; 
+        justify-content: center; 
+        padding: 2em;
+        border: 1.6px solid black;
+        font-size: 2rem;
+        text-align: center;
+        line-height: 1; 
+        box-sizing: border-box;
+        max-height: 2em; 
+        overflow: hidden; 
+        cursor: pointer;
+    }
+}
+
+
+.background{
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.507);
+
+    & .pop-up-modal{
+        background-color: rgb(20, 20, 20);
+        position: absolute;
+        color:white;
+        width: 400px;
+        padding: 0em 5em 5em 5em;
+        border-radius: 5px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    & h2{
+        font-family: 'Bungee Spice', sans-serif;
+        text-align: center;
+        margin-bottom: 2em;
+    }
+
+    & p {
+        font-family: 'Bungee Spice', sans-serif;
+        text-align: left;;
+    }
+
+    & #remove {
+        position: absolute;
+        top:0;
+        right: 0;
+        align-items: center;
+        display: flex;
+        margin: 0.2em;
+        background-color: rgb(148, 7, 148);
+        border-radius: 15px;
+        cursor: pointer;
+        border: none;
+        color:white;
+        font-size: 2rem;
+    }
+
+    & #play-again{
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+        position: absolute;
+        bottom: 0;
+        left:50%;
+        transform: translate(-50%,0);
+        background-color: rgb(148, 7, 148);
+        border: none;
+        padding: 0.2em;
+        border-radius: 5px;
+        color:white;
+        margin-bottom: 0.5em;
+        cursor: pointer;
+    }
+}
