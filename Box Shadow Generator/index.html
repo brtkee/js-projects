@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box shadow Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <h2 class="main-text">Box shadow generator</h2>
+        <div class="text-info">
+            <p>box shadow:[offset-x] [offset-y] [blur-radius] [spread-radius] [color] [inset]</p>
+        </div>
+        <section class="result-card">
+            <div class="box"></div>
+        </section>
+        <div class="options">
+            <section class="labels">
+                <section>
+                    <label for="offset-X">Offset X</label>
+                    <input type="range" name="offset-X" id="offset-X" min="0" max="100" step="1">
+                </section>
+
+                <section>
+                    <label for="offset-Y">Offset Y</label>
+                    <input type="range" name="offset-Y" id="offset-Y" min="0" max="100" step="1">
+                </section>
+                
+                <section>
+                    <label for="blur-radius">Blur radius</label>
+                    <input type="range" name="blur-radius" id="blur-radius" min="0" max="100" step="1">
+                </section>
+
+                <section>
+                    <label for="spread-radius">Spread radius</label>
+                    <input type="range" name="spread-radius" id="spread-radius" min="0" max="100" step="1">
+                </section>
+            </section>
+            <div class="options-sec">
+                <section>
+                    <input type="color" name="color" id="color">
+                </section>
+                <section>
+                    <label for="is-inset">Inset:</label>
+                    <input type="checkbox" name="is-inset" id="inset">
+                </section>
+            </div>  
+
+            <button id="reset">Reset</button>
+
+            <section class="copy-result">
+                <textarea class="result" rows="2" cols="20"></textarea>
+                <button id="copy">Copy</button>
+            </section>
+        </div>
+    </div>
+
+    <!--Ion-icon-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!---->
+
+    <script src="script.js"></script>
+</body>
+</html>
