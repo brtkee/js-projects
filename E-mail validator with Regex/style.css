@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200;1,300;1,400&display=swap');
+:root{
+    --web-background-color: #1C80B4;
+    --wrong-input: #EF3051;
+    --correct-input: #39C76E;
+}
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: var(--web-background-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+.email-card{
+    width: 450px;
+    background-color: white;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    border-radius: 7.5px;
+
+    & .card-title{
+        text-align: center;
+        padding: 0.7em;
+        margin-bottom: 1em;
+        border-bottom: 1px solid black;
+        font-size: 1.7rem;
+    }
+
+    & .inputs{
+        display: flex;
+        flex-direction: column;
+        padding: 0em 2em;
+        & label {
+            font-weight: 500;
+            margin: 0.4em 0em;
+            font-size: 1.2rem;
+        }
+
+        & input {
+            width: 100%;
+            padding:0.3em;
+            border-radius: 4.5px;
+            border: 1px solid black;
+            font-size: 0.9rem;
+        }
+
+        & input:focus{
+            border: 2px solid rgba(0, 0, 0, 0.705);
+            outline: none;
+            color:rgba(0, 0, 0, 0.87);
+        }
+
+        & input:last-child{
+            margin-bottom: 1.4em;
+        }
+
+        & .wrong-input-message{
+            font-size: 0.8rem;
+            color:gray;
+        }
+    }
+
+    & .terms-and-condition{
+        text-align: center;
+    }
+    
+    & #submit{
+        background-color: var(--web-background-color);
+        border:none;
+        padding:0.5em;
+        color:white;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-radius: 5px;
+        margin: 1.2em 0em;
+        width: 70%;
+        cursor: pointer;
+    }
+
+    & #submit:hover{
+        background-color: #1c7fb4c9;
+    }
+
+    #card-footer{
+        background-color: black;
+        width: 100%;
+        border-radius: 20px 20px 5px 5px;
+        text-align: center;
+        color:white;
+    }
+}
