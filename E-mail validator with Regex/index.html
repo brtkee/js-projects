@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-mail validator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="email-card">
+            <h2 class="card-title">Email validator</h2>
+            <section class="inputs">
+                <label for="name">Name:</label>
+                <input type="text" id="name" class="text-input">
+
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" class="text-input">
+
+                <label for="email">E-mail:</label>
+                <input type="text" id="email" class="text-input">
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" class="text-input">
+            </section>
+            <section class="terms-and-condition">
+                <input type="checkbox" name="" id="agree-terms"> 
+                <label for="agree-terms">Agree to our <a href="#">Terms and conditions</a></label>
+                <button id="submit">Submit</button>
+            </section>
+            <footer id="card-footer">
+                <p>&copy; <span id="date"></span></p>
+            </footer>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
