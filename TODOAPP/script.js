@@ -55,6 +55,3 @@ function deleteTask(index){
 
 // add event listener to button
 btn.addEventListener('click', addTask)
-
-
-// try catch promise itp do nauki
