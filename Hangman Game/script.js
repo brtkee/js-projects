@@ -97,8 +97,7 @@ function randomCategoryAndWord(){
 function hashWord(){
     const wordWithoutHash = gameWordEl.textContent;
     const wordWithHash = wordWithoutHash.replace(/[a-z]/gi, "_")
-
-    console.log(wordWithoutHash)
+    
     // give hashed and not hashed word to handleClick func
     handleClick(wordWithoutHash, wordWithHash)
     // set the hashed word
