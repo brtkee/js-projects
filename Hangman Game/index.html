@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Hangman Game</h1>
+    </nav>
+    <div id="content">
+        <section class="card">
+            <div id="card-title">
+                <h1>The chosen category is: <br> <mark><span id="current-category">Cities</span></mark></h1>
+            </div>
+
+            <h2 id="game-word"></h2>
+
+            <div id="alphabet-container">
+                <div class="lives">Lives: <span id="current-live">10</span></div>
+            </div>
+
+            <button id="reset-game" onclick="location.reload()">Reset</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
