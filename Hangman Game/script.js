@@ -61,8 +61,8 @@ const categoryAndWords = [
         "Kebab"
     ]}
 ]
-// make the score variable
-let score = 10;
+// make the lives variable
+let lives = 10;
 
 // create an array with all the letters needed and append them to alphabetContainerEl
 const alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -125,9 +125,9 @@ function handleClick(word, hashedWord) {
                 // give the correct letter classlist prepared in CSS
                 box.classList.add('correct-letter')
             } else {
-                // update the score
-                score--;
-                currentLivesEl.textContent = score;
+                // update the lives
+                lives--;
+                currentLivesEl.textContent = lives;
                 // give the incorrect letter classlist prepared in CSS
                 box.classList.add('incorrect-letter')
             }
@@ -156,7 +156,7 @@ function checkWin(word, hashedWord){
         </div>
         `
         document.body.append(modal)
-    } else if(score === 0){
+    } else if(lives === 0){
         modal.innerHTML = `
         <div class="popup-modal">
             <h2>You Lose!</h2>
@@ -178,7 +178,7 @@ function init(){
 window.addEventListener("keyup", (event) => {
     const alphabetBoxes = document.querySelectorAll(".box");
     alphabetBoxes.forEach((box) => {
-       if(box.textContent === event.key && score > 0){
+       if(box.textContent === event.key && lives > 0){
         box.click()
        }
     })
