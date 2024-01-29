@@ -88,7 +88,7 @@ function randomCategoryAndWord(){
     const ArrayFromCategory = Object.values(categoryAndWords[randomCategoryIndex]).flat();
     const randomWordFromCategory = ArrayFromCategory[Math.floor(Math.random() * ArrayFromCategory.length)];
 
-    // set the random category, word to html element
+    // set the random category word to html element
     currentCategoryEl.textContent = randomCategoryName;
     gameWordEl.textContent = randomWordFromCategory
 }
