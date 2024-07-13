@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Invaders Game</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
+  <link rel="icon" href="./Images/enemy2.png" type="image/x-icon" id="replace-icon-el">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const replaceIconEl = document.querySelector("#replace-icon-el");
+
+        const images = [];
+        for (let i = 0; i <= 3; i++) {
+            const img = new Image();
+            img.src = `./Images/enemy${i}.png`;
+            images.push(img);
+        }
+
+        const randomIntFromRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+        setInterval(() => {
+            const randomImageIndex = randomIntFromRange(1, 4);
+            replaceIconEl.href = `./Images/enemy${randomImageIndex}.png`;
+        }, 1000); 
+    });
+</script>
+</head>
+<body>
+  <canvas id="main-game"></canvas>
+
+  <div class="start-card">
+    <h2 class="heading start">SPACE INVADERS</h2>
+    <button id="play">PLAY</button>
+  </div>
+
+  <script type="module" src="./script.js"></script>
+</body>
+</html>
