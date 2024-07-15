@@ -1,10 +1,7 @@
 import { Bird } from "./Classes/Bird.js";
 import { Pipe } from "./Classes/Pipelines.js";
-import { createImg, randomIntFromRange } from "./functions.js";
+import { createImg, randomIntFromRange, endGame } from "./functions.js";
 
-const tryAgainCard = document.querySelector('.try-again');
-const scoreEl = document.querySelector('#score');
-const bestScoreEl = document.querySelector('#best');
 const resetGameBtn = document.querySelector('#try-again');
 
 const canvas = document.querySelector('#flappy-bird-game');
@@ -19,29 +16,8 @@ let pipelines = [];
 
 let frames = 0;
 let score = 0;
-let isGameOver = false;
-
-const endGame = (animationID, score) => {
-    window.cancelAnimationFrame(animationID);
-
-    if (score >= localStorage.getItem('bestScore')) {
-        localStorage.setItem('bestScore', score);
-    }
-
-    tryAgainCard.classList.add('active');
-    scoreEl.innerText = score;
-    bestScoreEl.innerText = localStorage.getItem('bestScore');
-
-    isGameOver = true;
-
-    bird.velocity.x = 0;
-    bird.velocity.y = 0;
-    bird.position.y = 0;
-}
 
 const animate = () => {
-    if (isGameOver) return;
-
     let animationId = window.requestAnimationFrame(animate);
     c.clearRect(0, 0, canvas.width, canvas.height);
     
