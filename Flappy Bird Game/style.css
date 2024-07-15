@@ -1,0 +1,111 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Silkscreen", sans-serif;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100svh;
+}
+
+#canvas-container {
+    position: relative;
+
+    & canvas {
+        display: block;
+    }
+
+    & .try-again {
+        transition: all ease-in-out 250ms;
+        opacity: 0;
+        transform: translateY(-100%);
+        position: absolute;
+        top: 0%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        & #game-over {
+            font-size: 2rem;
+            margin-bottom: 1em;
+            color: #F4AF30;
+              text-shadow: 
+                1px 1px 0 #4B2E00, 
+                -1px 1px 0 #4B2E00, 
+                1px -1px 0 #4B2E00, 
+                -1px -1px 0 #4B2E00, 
+                1px 0 0 #4B2E00, 
+                0 1px 0 #4B2E00, 
+                -1px 0 0 #4B2E00, 
+                0 -1px 0 #4B2E00,
+                
+                2px 2px 0 white, 
+                -2px 2px 0 white, 
+                2px -2px 0 white, 
+                -2px -2px 0 white, 
+                2px 0 0 white, 
+                0 2px 0 white, 
+                -2px 0 0 white, 
+                0 -2px 0 white;
+        }
+
+        & .container{
+            width: 80%;
+            background-color: #DCD587;
+            padding: 0.7em;
+            border: 2px solid #58371D;
+
+            & .main-container {
+                border: 2px solid #C6A241;
+                padding: 0.4em;
+                text-align: center;
+
+                & h2 {
+                    color: #C6A241;
+                    font-size: 1.5rem;
+                }
+
+                & span {
+                    font-size: 2rem;
+                    color: white;
+                    text-shadow: 
+                    1px 1px 0 black, 
+                    -1px 1px 0 black, 
+                    1px -1px 0 black, 
+                    -1px -1px 0 black, 
+                    1px 0 0 black, 
+                    0 1px 0 black, 
+                    -1px 0 0 black, 
+                    0 -1px 0 black;
+                }
+            }
+        }
+    }
+
+    & .try-again.active{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+
+    & .brd{
+        margin-top: 1em;
+        border: 2px solid #4B2E00;
+    }
+
+    & #try-again {
+        background-color: #D8622D;
+        border: 1px solid white;
+        padding: 0.5em 0.5em;
+        padding-bottom: 0.6em;
+        cursor: pointer;
+        color: white;
+    }
+
+}
+
