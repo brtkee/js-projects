@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Medieval-Font';
+    src: url('./Assets/Font/vinque\ rg.otf') format('truetype');
+}
+
+*,
+*::after, 
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* cursor: url(./Assets/Cursor/Middle\ Ages--pointer--SweezyCursors.cur), auto; */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+}
+
+canvas {
+    display: block;
+}
+
+.bars {
+    bottom: 5px;
+    position: absolute;
+
+    & #health[value] {
+        width: 450px;
+        height: 30px;
+        border: none;
+        position: relative;
+    }
+        
+    & #health[value]::-moz-progress-bar {
+        background-color: #00C832;
+    } 
+
+    & .hp-icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30px;
+    }
+}
